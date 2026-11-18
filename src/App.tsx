@@ -15,11 +15,11 @@ export default function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col bg-canvas dark:bg-navy-dark text-navy dark:text-canvas transition-colors duration-300 selection:bg-teal selection:text-white bg-grid-subtle">
-          {/* Main Top Navigation Bar */}
+        <div className="min-h-screen flex flex-col bg-canvas dark:bg-navy-dark text-navy dark:text-canvas transition-colors duration-200">
+          {/* Clean Navigation Bar */}
           <Navbar />
 
-          {/* Dynamic Page Routes */}
+          {/* Main Content Area */}
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -33,7 +33,7 @@ export default function App() {
             </Routes>
           </main>
 
-          {/* Shared Global Footer */}
+          {/* Clean Footer */}
           <Footer />
         </div>
       </BrowserRouter>

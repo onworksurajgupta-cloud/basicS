@@ -1,85 +1,71 @@
 import { Link } from 'react-router-dom'
 import { GraduationCap } from 'lucide-react'
 import { SUBJECTS } from '../../data/curriculum'
-import { BADGE_STYLES } from '../../theme/tokens'
 
 export function Footer() {
   return (
-    <footer className="bg-white dark:bg-navy border-t border-slate-200 dark:border-navy-light/60 py-14 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-white dark:bg-navy border-t border-slate-200 dark:border-navy-light/60 py-10 transition-colors duration-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Info */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 space-y-2">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-xl bg-navy dark:bg-navy-card border border-teal/40 flex items-center justify-center text-teal">
-                <GraduationCap className="w-5 h-5" />
+              <div className="w-7 h-7 rounded-lg bg-navy dark:bg-navy-card border border-teal/40 flex items-center justify-center text-teal">
+                <GraduationCap className="w-4 h-4" />
               </div>
-              <span className="text-xl font-black text-navy dark:text-canvas">
+              <span className="text-lg font-bold text-navy dark:text-canvas">
                 basic<span className="text-teal">S</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block ml-0.5" />
               </span>
             </Link>
-            <p className="mt-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-              Premium Multi-Subject Mechanical Engineering Learning Management System with structured Units, Lectures, Practice Work, and Tests.
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Simple, structured mechanical engineering education for students and self-learners.
             </p>
-            <div className="mt-4">
-              <span className={BADGE_STYLES.teal}>Full Multi-Page LMS Active</span>
-            </div>
           </div>
 
-          {/* Academic Disciplines */}
+          {/* Subjects */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-4">
-              Engineering Disciplines
+            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-3">
+              Courses
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
+            <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
               {SUBJECTS.map((s) => (
                 <li key={s.id}>
-                  <Link
-                    to={`/courses/${s.id}`}
-                    className="hover:text-teal transition-colors"
-                  >
-                    {s.name} ({s.code})
+                  <Link to={`/courses/${s.id}`} className="hover:text-teal transition-colors">
+                    {s.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Navigation Links */}
+          {/* Portals */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-4">
-              Academic Portals
+            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-3">
+              Portals
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
-              <li><Link to="/" className="hover:text-teal">Home Overview</Link></li>
-              <li><Link to="/courses" className="hover:text-teal">Courses Catalog</Link></li>
-              <li><Link to="/online-class" className="hover:text-teal">Online Class & Meet</Link></li>
-              <li><Link to="/take-tests" className="hover:text-teal">Take Tests Arena</Link></li>
-              <li><Link to="/contact" className="hover:text-teal">Contact Support</Link></li>
-              <li><Link to="/login" className="hover:text-teal">Student Login</Link></li>
+            <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+              <li><Link to="/courses" className="hover:text-teal">All Courses</Link></li>
+              <li><Link to="/online-class" className="hover:text-teal">Online Class</Link></li>
+              <li><Link to="/take-tests" className="hover:text-teal">Take Tests</Link></li>
+              <li><Link to="/contact" className="hover:text-teal">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Technical Specifications */}
+          {/* Info */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-4">
-              Design Architecture
+            <h4 className="text-xs font-bold uppercase tracking-wider text-navy dark:text-canvas mb-3">
+              About
             </h4>
-            <ul className="space-y-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              <li><strong className="text-navy dark:text-canvas">Palette:</strong> Deep Navy, Teal, White, Gold</li>
-              <li><strong className="text-navy dark:text-canvas">Routing:</strong> React Router (SPA)</li>
-              <li><strong className="text-navy dark:text-canvas">Hosting:</strong> Cloudflare Pages Compatible</li>
-              <li><strong className="text-teal">Status:</strong> Phase 1 Multi-Page Foundation</li>
-            </ul>
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Designed with React, Vite &amp; Tailwind CSS. Built with a clean, sober EdTech design system.
+            </p>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-navy-light/40 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-          <p>© {new Date().getFullYear()} basicS Learning Systems. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0 font-medium">
-            English &bull; Responsive &bull; Mechanical Engineering LMS
-          </p>
+        <div className="mt-8 pt-6 border-t border-slate-100 dark:border-navy-light/30 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+          <p>© {new Date().getFullYear()} basicS. All rights reserved.</p>
+          <p className="mt-1 sm:mt-0">English &bull; Clean &amp; Sober</p>
         </div>
       </div>
     </footer>
