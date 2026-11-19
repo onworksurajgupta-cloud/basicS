@@ -135,3 +135,5 @@ export const RECORDED_LECTURES: RecordedLectureItem[] = [
     thumbnailColor: 'from-teal-light/20 to-navy',
   },
 ]
+
+export const ONLINE_CLASSES = UPCOMING_CLASSES

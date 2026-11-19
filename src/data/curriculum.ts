@@ -772,3 +772,6 @@ export const SUBJECTS: Subject[] = [
     ],
   },
 ]
+
+export const COURSES = SUBJECTS
+export type Course = Subject
